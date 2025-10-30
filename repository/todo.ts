@@ -13,6 +13,7 @@ export const addTodo = async ( text: string) => {
   await db.insert(todo).values({
     text: text,
   });
+  revalidatePath("/");
 };
 
 export const deleteTodo = async (id: string) => {
