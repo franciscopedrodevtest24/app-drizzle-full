@@ -5,6 +5,8 @@ import Todo, { todoType } from "./todo";
 import { addTodo, deleteTodo, editTodo, toggleTodo } from "@/repository/todo";
 import AddTodo from "./add-todo";
 ;
+import { CldUploadButton } from 'next-cloudinary';
+ 
 
 interface Props {
   todos: todoType[];
@@ -61,6 +63,12 @@ const Todos: FC<Props> = ({ todos }) => {
       </div>
       {/* Adding Todo component for creating new todos */}
       <AddTodo createTodo={createTodo} />
+      <CldUploadButton 
+      uploadPreset="content"
+        options={{ cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+
+
+      />
     </main>
   );
 };
