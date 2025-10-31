@@ -1,7 +1,14 @@
-import Todos from "@/components/todos";
-import { getData } from "@/repository/todo";
+import { Navigation } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { Stats } from "@/components/stats";
 
-export default async function Home() {
-  const data = await getData();
-  return <Todos todos={data} />;
+export default  function Home() {
+  
+  return (
+     <div className="min-h-screen">
+      <Navigation />
+      <Hero />
+      <Stats />
+    </div>
+  )
 }
